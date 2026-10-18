@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <a href="/">
+          <img src="img/logo.png" alt="Company logo" />
+        </a>
+        <h1>Best Travel</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/request-form">Travel request</a></li>
+          <li><a aria-current="/login">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="login" id="login">
+      <h2>Log in</h2>
+
+      <form action="personal-blog.html" method="get">
+        <p>
+          <label for="name">Name</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            pattern="[A-Za-zĄČĘĖĮŠŲŪŽąčęėįšųūž ]{2,30}"
+            title="Name must be 2–30 letters"
+            autocomplete="name"
+          />
+        </p>
+
+        <p>
+          <label for="email">Email</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="name@example.com"
+            autocomplete="email"
+          />
+        </p>
+
+        <p>
+          <label for="password">Password</label><br />
+          <input
+            type="password"
+            id="password"
+            required
+            minlength="8"
+            pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}"
+            title="At least 8 characters, with at least one letter and one number"
+            autocomplete="current-password"
+          />
+        </p>
+
+        <button type="submit">Log in</button>
+      </form>
+    </section>
+    <footer>
+      <div>
+        <section>
+          <h2>Contact us</h2>
+          <address>
+            Best Travel<br />
+            Laisvės al. 10, Kaunas, Lithuania<br />
+            Phone: <a href="tel:+37060000000">+370 600 00000</a><br />
+            Email: <a href="mailto:info@wanderly.lt">info@besttravel.lt</a>
+          </address>
+        </section>
+        <iframe
+          width="300"
+          height="200"
+          style="border: 0"
+          src="https://maps.google.com/maps?q=laisves%20al.%2010%20kaunas&t=m&z=14&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <p class="copyright">
+        <small>&copy; 2026 Best Travel. All rights reserved.</small>
+      </p>
+    </footer>
+  </body>
+</html>
