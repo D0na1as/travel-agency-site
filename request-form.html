@@ -2,243 +2,283 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Request form page</title>
+    <link rel="icon" href="img/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <div class="brand">
-        <a href="/">
-          <img src="img/logo.png" alt="Company logo" />
+    <header class="header">
+      <div class="header__brand">
+        <a class="header__logo-link" href="index.html">
+          <img class="header__logo" src="img/logo.png" alt="Best Travel logo – go to Home page" />
         </a>
-        <h1>Best Travel</h1>
+        <h1 class="header__title">Best Travel</h1>
       </div>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a aria-current="/request-form">Travel request</a></li>
-          <li><a href="/login">Login</a></li>
+      <nav class="header__nav" aria-label="Main">
+        <ul class="header__list">
+          <li><a class="header__link" href="index.html">Home</a></li>
+          <li><a class="header__link header__link--current" aria-current="page">Travel request</a></li>
+          <li><a class="header__link" href="login.html">Log in</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <form action="index.html" method="get">
-        <!-- Contact details -->
-        <fieldset>
-          <legend>Your contact details</legend>
-
-          <p>
-            <label for="name">Name</label><br />
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              pattern="[A-Za-zĄČĘĖĮŠŲŪŽąčęėįšųūž ]{2,30}"
-              title="Name must be 2–30 letters"
-              autocomplete="name"
-            />
-          </p>
-
-          <p>
-            <label for="email">Email</label><br />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="name@example.com"
-              autocomplete="email"
-            />
-          </p>
-
-          <p>
-            <label for="phone">Phone number</label><br />
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              pattern="\+370[0-9]{8}"
-              placeholder="+37060000000"
-              title="Format: +370 and 8 digits, e.g. +37060000000"
-              autocomplete="tel"
-            />
-          </p>
-        </fieldset>
-
-        <!-- Dropdowns -->
-        <fieldset>
-          <legend>Trip details</legend>
-
-          <p>
-            <label for="destination">Destination</label><br />
-            <select id="destination" name="destination" required>
-              <option value="">Choose a destination</option>
-              <optgroup label="Europe">
-                <option value="paris">Paris, France</option>
-                <option value="santorini">Santorini, Greece</option>
-                <option value="rome">Rome, Italy</option>
-              </optgroup>
-              <optgroup label="Asia">
-                <option value="tokyo">Tokyo, Japan</option>
-                <option value="bali">Bali, Indonesia</option>
-                <option value="bangkok">Bangkok, Thailand</option>
-              </optgroup>
-              <optgroup label="America">
-                <option value="newyork">New York, USA</option>
-                <option value="cancun">Cancún, Mexico</option>
-                <option value="rio">Rio de Janeiro, Brazil</option>
-              </optgroup>
-            </select>
-          </p>
-
-          <p>
-            <label for="accommodation">Accommodation</label><br />
-            <select id="accommodation" name="accommodation" required>
-              <option value="">Choose accommodation</option>
-              <optgroup label="Hotels">
-                <option value="hotel3">3-star hotel</option>
-                <option value="hotel4">4-star hotel</option>
-                <option value="hotel5">5-star hotel</option>
-              </optgroup>
-              <optgroup label="Other">
-                <option value="apartment">Apartment</option>
-                <option value="hostel">Hostel</option>
-                <option value="villa">Villa</option>
-              </optgroup>
-            </select>
-          </p>
-
-          <p>
-            <label for="travelers">Number of travelers</label><br />
-            <select id="travelers" name="travelers" required>
-              <option value="">Choose number of travelers</option>
-              <optgroup label="Adults only">
-                <option value="1">1 adult</option>
-                <option value="2">2 adults</option>
-                <option value="3+">3 or more adults</option>
-              </optgroup>
-              <optgroup label="With children">
-                <option value="family-small">2 adults + 1 child</option>
-                <option value="family-medium">2 adults + 2 children</option>
-                <option value="family-large">
-                  2 adults + 3 or more children
-                </option>
-              </optgroup>
-            </select>
-          </p>
-
-          <p>
-            <label for="date">Departure date</label><br />
-            <input
-              type="date"
-              id="date"
-              name="date"
-              required
-              min="2026-10-19"
-            />
-          </p>
-        </fieldset>
-
-        <!-- Checkboxes -->
-        <fieldset>
-          <legend>Extra services (choose any)</legend>
-          <input
-            type="checkbox"
-            id="insurance"
-            name="extras"
-            value="insurance"
-          />
-          <label for="insurance">Travel insurance</label><br />
-
-          <input type="checkbox" id="transfer" name="extras" value="transfer" />
-          <label for="transfer">Airport transfer</label><br />
-
-          <input
-            type="checkbox"
-            id="carrental"
-            name="extras"
-            value="car-rental"
-          />
-          <label for="carrental">Car rental</label><br />
-
-          <input type="checkbox" id="guide" name="extras" value="guide" />
-          <label for="guide">Tour guide</label><br />
-
-          <input type="checkbox" id="luggage" name="extras" value="luggage" />
-          <label for="luggage">Extra luggage</label>
-        </fieldset>
-
-        <!-- Radio buttons -->
-        <fieldset>
-          <legend>Meal plan</legend>
-          <input
-            type="radio"
-            id="meal-none"
-            name="meals"
-            value="none"
-            required
-          />
-          <label for="meal-none">No meals</label><br />
-
-          <input
-            type="radio"
-            id="meal-breakfast"
-            name="meals"
-            value="breakfast"
-          />
-          <label for="meal-breakfast">Breakfast only</label><br />
-
-          <input type="radio" id="meal-half" name="meals" value="half-board" />
-          <label for="meal-half">Half board</label><br />
-
-          <input
-            type="radio"
-            id="meal-all"
-            name="meals"
-            value="all-inclusive"
-          />
-          <label for="meal-all">All inclusive</label>
-        </fieldset>
-
-        <!-- Textarea -->
-        <fieldset>
-          <legend>Your message</legend>
-          <label for="message">Anything else we should know?</label><br />
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            cols="50"
-            required
-            minlength="10"
-            placeholder="For example: budget, special wishes, allergies..."
-          ></textarea>
-        </fieldset>
-
-        <!-- Agreement -->
-        <p>
-          <input type="checkbox" id="agree" name="agree" required />
-          <label for="agree">I agree to be contacted about my inquiry</label>
+    <main class="page">
+      <section class="section">
+        <h2 class="section__title">Travel request</h2>
+        <p class="section__intro">
+          Tell us where you want to go and we will prepare an offer for you.
         </p>
 
-        <button type="submit">Send inquiry</button>
-      </form>
+        <form class="request-form" action="index.html" method="get">
+          <!-- Contact details -->
+          <fieldset>
+            <legend>Your contact details</legend>
+
+            <div class="grid">
+              <p>
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  pattern="[A-Za-zĄČĘĖĮŠŲŪŽąčęėįšųūž ]{2,30}"
+                  title="Name must be 2–30 letters"
+                  autocomplete="name"
+                />
+              </p>
+
+              <p>
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="name@example.com"
+                  autocomplete="email"
+                />
+              </p>
+
+              <p>
+                <label for="phone">Phone number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  pattern="\+370[0-9]{8}"
+                  placeholder="+37060000000"
+                  title="Format: +370 and 8 digits, e.g. +37060000000"
+                  autocomplete="tel"
+                />
+              </p>
+            </div>
+          </fieldset>
+
+          <!-- Dropdowns -->
+          <fieldset>
+            <legend>Trip details</legend>
+
+            <div class="grid">
+              <p>
+                <label for="destination">Destination</label>
+                <select id="destination" name="destination" required>
+                  <option value="">Choose a destination</option>
+                  <option value="paris">Paris, France</option>
+                  <option value="santorini">Santorini, Greece</option>
+                  <option value="rome">Rome, Italy</option>
+                  <option value="tokyo">Tokyo, Japan</option>
+                  <option value="bali">Bali, Indonesia</option>
+                  <option value="bangkok">Bangkok, Thailand</option>
+                  <option value="newyork">New York, USA</option>
+                  <option value="cancun">Cancún, Mexico</option>
+                  <option value="rio">Rio de Janeiro, Brazil</option>
+                </select>
+              </p>
+
+              <p>
+                <label for="accommodation">Accommodation</label>
+                <select id="accommodation" name="accommodation" required>
+                  <option value="">Choose accommodation</option>
+                  <option value="hotel3">3-star hotel</option>
+                  <option value="hotel4">4-star hotel</option>
+                  <option value="hotel5">5-star hotel</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="hostel">Hostel</option>
+                  <option value="villa">Villa</option>
+                </select>
+              </p>
+
+              <p>
+                <label for="travelers">Number of travelers</label>
+                <select id="travelers" name="travelers" required>
+                  <option value="">Choose number of travelers</option>
+                  <option value="1">1 adult</option>
+                  <option value="2">2 adults</option>
+                  <option value="3+">3 or more adults</option>
+                  <option value="family-small">2 adults + 1 child</option>
+                  <option value="family-medium">2 adults + 2 children</option>
+                  <option value="family-large">2 adults + 3 or more children</option>
+                </select>
+              </p>
+
+              <p>
+                <label for="date">Departure date</label>
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  required
+                  min="2026-10-19"
+                />
+              </p>
+            </div>
+          </fieldset>
+
+          <!-- Checkboxes and radio buttons side by side -->
+          <div class="grid grid--2">
+            <fieldset>
+              <legend>Extra services (choose any)</legend>
+              <div class="checks">
+                <label for="insurance">
+                  <input
+                    type="checkbox"
+                    id="insurance"
+                    name="extras"
+                    value="insurance"
+                  />
+                  Travel insurance
+                </label>
+
+                <label for="transfer">
+                  <input
+                    type="checkbox"
+                    id="transfer"
+                    name="extras"
+                    value="transfer"
+                  />
+                  Airport transfer
+                </label>
+
+                <label for="carrental">
+                  <input
+                    type="checkbox"
+                    id="carrental"
+                    name="extras"
+                    value="car-rental"
+                  />
+                  Car rental
+                </label>
+
+                <label for="guide">
+                  <input type="checkbox" id="guide" name="extras" value="guide" />
+                  Tour guide
+                </label>
+
+                <label for="luggage">
+                  <input
+                    type="checkbox"
+                    id="luggage"
+                    name="extras"
+                    value="luggage"
+                  />
+                  Extra luggage
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Meal plan</legend>
+              <div class="grid grid--2 meal-options">
+                <label for="meal-none">
+                  <input
+                    type="radio"
+                    id="meal-none"
+                    name="meals"
+                    value="none"
+                    required
+                  />
+                  No meals
+                </label>
+
+                <label for="meal-breakfast">
+                  <input
+                    type="radio"
+                    id="meal-breakfast"
+                    name="meals"
+                    value="breakfast"
+                  />
+                  Breakfast only
+                </label>
+
+                <label for="meal-half">
+                  <input
+                    type="radio"
+                    id="meal-half"
+                    name="meals"
+                    value="half-board"
+                  />
+                  Half board
+                </label>
+
+                <label for="meal-all">
+                  <input
+                    type="radio"
+                    id="meal-all"
+                    name="meals"
+                    value="all-inclusive"
+                  />
+                  All inclusive
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Textarea -->
+          <fieldset>
+            <legend>Your message</legend>
+            <label for="message">Anything else we should know?</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              cols="50"
+              required
+              minlength="10"
+              placeholder="For example: budget, special wishes, allergies..."
+            ></textarea>
+          </fieldset>
+
+          <!-- Agreement + submit -->
+          <div class="form-actions">
+            <label for="agree">
+              <input type="checkbox" id="agree" name="agree" required />
+              I agree to be contacted about my inquiry
+            </label>
+
+            <button class="button" type="submit">Send inquiry</button>
+          </div>
+        </form>
+      </section>
     </main>
-    <footer>
-      <div>
-        <section>
-          <h2>Contact us</h2>
-          <address>
+    <footer class="footer">
+      <div class="footer__inner">
+        <section class="footer__contact">
+          <h2 class="footer__title">Contact us</h2>
+          <address class="footer__address">
             Best Travel<br />
             Laisvės al. 10, Kaunas, Lithuania<br />
-            Phone: <a href="tel:+37060000000">+370 600 00000</a><br />
-            Email: <a href="mailto:info@wanderly.lt">info@besttravel.lt</a>
+            Phone: <a class="footer__link" href="tel:+37060000000">+370 600 00000</a><br />
+            Email:
+            <a class="footer__link" href="mailto:info@besttravel.lt">info@besttravel.lt</a>
           </address>
         </section>
         <iframe
+          class="footer__map"
+          title="Map: Best Travel office, Laisvės al. 10, Kaunas"
           width="300"
           height="200"
           style="border: 0"
@@ -247,8 +287,8 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <p class="copyright">
-        <small>&copy; 2026 Best Travel. All rights reserved.</small>
+      <p class="footer__copyright">
+        <small class="footer__copyright-text">&copy; 2026 Best Travel. All rights reserved.</small>
       </p>
     </footer>
   </body>

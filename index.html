@@ -2,110 +2,201 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="img/logo.png" type="image/png" />
     <title>Home Page</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <div class="brand">
-        <a href="/">
-          <img src="img/logo.png" alt="Company logo" />
-        </a>
-        <h1>Best Travel</h1>
+    <header class="header">
+      <div class="header__brand">
+        <img class="header__logo" src="img/logo.png" alt="Best Travel logo" />
+        <h1 class="header__title">Best Travel</h1>
       </div>
-      <nav>
-        <ul>
-          <li><a aria-current="/index.html">Home</a></li>
-          <li><a href="/request-form.html">Travel request</a></li>
-          <li><a href="/login.html">Login</a></li>
+      <nav class="header__nav" aria-label="Main">
+        <ul class="header__list">
+          <li>
+            <a class="header__link header__link--current" aria-current="page"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="header__link" href="request-form.html">Travel request</a>
+          </li>
+          <li><a class="header__link" href="login.html">Log in</a></li>
+        </ul>
+      </nav>
+      <nav class="sub-nav" aria-label="Home page sections">
+        <ul class="sub-nav__list">
+          <li>
+            <a class="sub-nav__link" href="#offers">Travel offers</a>
+          </li>
+          <li><a class="sub-nav__link" href="#car-rental">Car rental</a></li>
+          <li>
+            <a class="sub-nav__link" href="#tips">Travel tips</a>
+          </li>
+          <li>
+            <a class="sub-nav__link" href="#journal">Travel journal</a>
+          </li>
         </ul>
       </nav>
     </header>
-    <div>
-      <aside>
-        <nav>
-          <ul>
-            <li><a href="#Proposals">Proposls</a></li>
-            <li><a href="#Journal">Journal</a></li>
-            <li><a href="#Tips">Tips</a></li>
-            <li><a href="#Car_rentls">Car rent</a></li>
-          </ul>
-        </nav>
-      </aside>
-      <main>
-        <section>
-          <h2>Promotional video</h2>
-          <video width="320" height="240" controls>
-            <source
-              src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-              type="video/mp4"
+    <main class="page">
+      <section class="section promo-video">
+        <h2 class="section__title">Promotional video</h2>
+        <video width="320" height="240" controls>
+          <source
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+      <section class="section" id="offers">
+        <h2 class="section__title">Travel offers</h2>
+        <div class="grid grid--4">
+          <article class="offer">
+            <img
+              src="https://picsum.photos/seed/paris/600/400"
+              alt="View of Paris"
             />
-            Your browser does not support the video tag.
-          </video>
-        </section>
-        <section id="Proposals">
-          <h2>Proposls</h2>
-          <div class="offers-grid">
-            <article class="offer">
-              <img
-                src="https://picsum.photos/seed/paris/600/400"
-                alt="View of Paris"
-              />
-              <h3>Paris</h3>
-              <p class="country">France</p>
-              <p class="description">
-                A romantic weekend by the Seine: the Eiffel Tower, the Louvre
-                and cozy cafés in Montmartre.
-              </p>
-              <button class="price-btn" type="button">349 €</button>
-            </article>
+            <h3>Paris</h3>
+            <p class="description">
+              A romantic weekend by the Seine: the Eiffel Tower, the Louvre and
+              cozy cafés in Montmartre.
+            </p>
+            <button class="button" type="button">349 €</button>
+          </article>
 
-            <article class="offer">
-              <img
-                src="https://picsum.photos/seed/santorini/600/400"
-                alt="Santorini coastline"
-              />
-              <h3>Santorini</h3>
-              <p class="country">Greece</p>
-              <p class="description">
-                White houses on the cliffs, a blue sea and sunsets in Oia. 7
-                nights in a hotel with breakfast.
-              </p>
-              <button class="price-btn" type="button">689 €</button>
-            </article>
+          <article class="offer">
+            <img
+              src="https://picsum.photos/seed/santorini/600/400"
+              alt="Santorini coastline"
+            />
+            <h3>Santorini</h3>
+            <p class="description">
+              White houses on the cliffs, a blue sea and sunsets in Oia. 7
+              nights in a hotel with breakfast.
+            </p>
+            <button class="button" type="button">689 €</button>
+          </article>
 
-            <article class="offer">
-              <img
-                src="https://picsum.photos/seed/tokyo/600/400"
-                alt="Streets of Tokyo"
-              />
-              <h3>Tokyo</h3>
-              <p class="country">Japan</p>
-              <p class="description">
-                Neon streets, ancient temples and the best sushi in the world. A
-                10-day guided tour.
-              </p>
-              <button class="price-btn" type="button">1 890 €</button>
-            </article>
+          <article class="offer">
+            <img
+              src="https://picsum.photos/seed/tokyo/600/400"
+              alt="Streets of Tokyo"
+            />
+            <h3>Tokyo</h3>
+            <p class="description">
+              Neon streets, ancient temples and the best sushi in the world. A
+              10-day guided tour.
+            </p>
+            <button class="button" type="button">1 890 €</button>
+          </article>
 
-            <article class="offer">
-              <img
-                src="https://picsum.photos/seed/newyork/600/400"
-                alt="New York skyline"
-              />
-              <h3>New York</h3>
-              <p class="country">USA</p>
-              <p class="description">
-                Central Park, Broadway musicals and the view from the Empire
-                State Building. Flight and 5 nights.
-              </p>
-              <button class="price-btn" type="button">1 250 $</button>
-            </article>
-          </div>
-        </section>
-        <section id="Journal">
-          <h2>Travel journal</h2>
+          <article class="offer">
+            <img
+              src="https://picsum.photos/seed/newyork/600/400"
+              alt="New York skyline"
+            />
+            <h3>New York</h3>
+            <p class="description">
+              Central Park, Broadway musicals and the view from the Empire State
+              Building. Flight and 5 nights.
+            </p>
+            <button class="button" type="button">1 250 $</button>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="car-rental">
+        <h2 class="section__title">Car rental</h2>
+        <div class="table-wrap">
+          <table>
+            <caption>
+              Rental prices by duration
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Brand</th>
+                <th scope="col">Photo</th>
+                <th scope="col">3 days</th>
+                <th scope="col">7 days</th>
+                <th scope="col">Longer rental</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Toyota Corolla</td>
+                <td>
+                  <img src="img/toyota.jpg" alt="Toyota Corolla" width="150" />
+                </td>
+                <td>35 €</td>
+                <td>95 €</td>
+                <td>200 €</td>
+              </tr>
+              <tr>
+                <td>Volkswagen Golf</td>
+                <td>
+                  <img src="img/golf.jpg" alt="Volkswagen Golf" width="150" />
+                </td>
+                <td>40 €</td>
+                <td>110 €</td>
+                <td>230 €</td>
+              </tr>
+              <tr>
+                <td>BMW 3 Series</td>
+                <td>
+                  <img src="img/bmw.jpg" alt="BMW 3 Series" width="150" />
+                </td>
+                <td>65 €</td>
+                <td>180 €</td>
+                <td>390 €</td>
+              </tr>
+              <tr>
+                <td>Tesla Model 3</td>
+                <td>
+                  <img src="img/tesla.jpg" alt="Tesla Model 3" width="150" />
+                </td>
+                <td>80 €</td>
+                <td>220 €</td>
+                <td>480 €</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section" id="tips">
+        <h2 class="section__title">Travel tips</h2>
+        <div class="grid grid--2">
+          <article class="tip-block">
+            <h3>Before your trip</h3>
+            <ol>
+              <li>
+                Check that your passport is valid for at least 6 months after
+                your return date.
+              </li>
+              <li>Find out whether you need a visa for your destination.</li>
+              <li>Buy travel insurance that covers medical costs.</li>
+              <li>Make copies of your documents and save them online.</li>
+              <li>Tell your bank which countries you will visit.</li>
+            </ol>
+          </article>
+          <article class="tip-block">
+            <h3>What to pack</h3>
+            <ul>
+              <li>Passport or ID card</li>
+              <li>Phone charger and a travel adapter</li>
+              <li>Comfortable walking shoes</li>
+              <li>Basic medicine and a small first aid kit</li>
+              <li>A reusable water bottle</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="journal">
+        <h2 class="section__title">Travel journal</h2>
 
+        <div class="grid grid--2 journal">
           <article>
             <header>
               <h3>Three days in Paris on a budget</h3>
@@ -119,7 +210,7 @@
               The easiest way to explore Paris is the <strong>metro</strong>. A
               weekly Navigo pass covers all zones and costs less than buying
               single tickets. Walking is also a great option, because many
-              famous sights are close to each other along the <em>Seine</em>.
+              famous sights are close to each other along the Seine.
             </p>
 
             <h4>Where to see the best views</h4>
@@ -129,11 +220,12 @@
                 href="https://en.wikipedia.org/wiki/Eiffel_Tower"
                 target="_blank"
                 >Eiffel Tower</a
-              >, but the view from Montmartre is <mark>completely free</mark>.
-              Go at sunset and you will see the whole city light up.
+              >, but the view from Montmartre is completely free. Go at sunset
+              and you will see the whole city light up.
             </p>
           </article>
 
+          
           <article>
             <header>
               <h3>Island hopping in Greece</h3>
@@ -144,15 +236,15 @@
             <p>
               Greece has more than <strong>200 inhabited islands</strong>, so
               planning is important. For a first trip, combine
-              <em>Santorini</em> for views, Naxos for beaches and Mykonos for
+              Santorini for views, Naxos for beaches and Mykonos for
               nightlife.
             </p>
 
             <h4>Ferries and timing</h4>
             <p>
               Ferries are cheaper than flights and much more scenic. Book early
-              in July and August, when boats <mark>sell out quickly</mark>. You
-              can read more about the islands on the
+              in July and August, when boats sell out quickly. You can read more
+              about the islands on the
               <a href="https://en.wikipedia.org/wiki/Cyclades" target="_blank"
                 >Cyclades page</a
               >.
@@ -169,13 +261,13 @@
             <p>
               In Japan, <strong>tipping is not expected</strong> and can even
               feel rude. Speak quietly on trains, and always take off your shoes
-              when entering a home or a traditional <em>ryokan</em>.
+              when entering a home or a traditional ryokan.
             </p>
 
             <h4>Saving money with a rail pass</h4>
             <p>
               If you plan to visit other cities, the
-              <abbr title="Japan Rail">JR</abbr> Pass can save you a lot. Check
+              JR Pass can save you a lot. Check
               the current prices on the
               <a
                 href="https://en.wikipedia.org/wiki/Japan_Rail_Pass"
@@ -208,106 +300,33 @@
 
             <h4>Staying warm</h4>
             <p>
-              Temperatures in January often drop <mark>below −5 °C</mark>, and
-              the wind makes it feel even colder. Pack a warm coat, gloves and a
-              hat, and <em>plan indoor stops</em> like museums between long
-              walks.
+              Temperatures in January often drop below −5 °C, and the wind makes
+              it feel even colder. Pack a warm coat, gloves and a hat, and
+              plan indoor stops like museums between long walks.
             </p>
           </article>
-        </section>
-        <section id="Tips"></section>
-        <h2>Traveling tips</h2>
-        <article class="tip-block">
-          <h3>Before your trip</h3>
-          <ol>
-            <li>
-              Check that your passport is valid for at least 6 months after your
-              return date.
-            </li>
-            <li>Find out whether you need a visa for your destination.</li>
-            <li>Buy travel insurance that covers medical costs.</li>
-            <li>Make copies of your documents and save them online.</li>
-            <li>Tell your bank which countries you will visit.</li>
-          </ol>
-        </article>
-        <article class="tip-block">
-          <h3>What to pack</h3>
-          <ul>
-            <li>Passport or ID card</li>
-            <li>Phone charger and a travel adapter</li>
-            <li>Comfortable walking shoes</li>
-            <li>Basic medicine and a small first aid kit</li>
-            <li>A reusable water bottle</li>
-          </ul>
-        </article>
-        <section id="Car_rentls"></section>
-        <h2>Car rental</h2>
-        <table>
-          <caption>
-            Rental prices by duration
-          </caption>
-          <thead>
-            <tr>
-              <td>Brand</td>
-              <td>Photo</td>
-              <td>3 days</td>
-              <td>7 days</td>
-              <td>Longer rental</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Toyota Corolla</td>
-              <td>
-                <img src="img/toyota.jpg" alt="Toyota Corolla" width="150" />
-              </td>
-              <td>35 €</td>
-              <td>95 €</td>
-              <td>200 €</td>
-            </tr>
-            <tr>
-              <td>Volkswagen Golf</td>
-              <td>
-                <img src="img/golf.jpg" alt="Volkswagen Golf" width="150" />
-              </td>
-              <td>40 €</td>
-              <td>110 €</td>
-              <td>230 €</td>
-            </tr>
-            <tr>
-              <td>BMW 3 Series</td>
-              <td>
-                <img src="img/bmw.jpg" alt="BMW 3 Series" width="150" />
-              </td>
-              <td>65 €</td>
-              <td>180 €</td>
-              <td>390 €</td>
-            </tr>
-            <tr>
-              <td>Tesla Model 3</td>
-              <td>
-                <img src="/img/tesla.jpg" alt="Tesla Model 3" width="150" />
-              </td>
-              <td>80 €</td>
-              <td>220 €</td>
-              <td>480 €</td>
-            </tr>
-          </tbody>
-        </table>
-      </main>
-    </div>
-    <footer>
-      <div>
-        <section>
-          <h2>Contact us</h2>
-          <address>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__inner">
+        <section class="footer__contact">
+          <h2 class="footer__title">Contact us</h2>
+          <address class="footer__address">
             Best Travel<br />
             Laisvės al. 10, Kaunas, Lithuania<br />
-            Phone: <a href="tel:+37060000000">+370 600 00000</a><br />
-            Email: <a href="mailto:info@wanderly.lt">info@besttravel.lt</a>
+            Phone:
+            <a class="footer__link" href="tel:+37060000000">+370 600 00000</a
+            ><br />
+            Email:
+            <a class="footer__link" href="mailto:info@besttravel.lt"
+              >info@besttravel.lt</a
+            >
           </address>
         </section>
         <iframe
+          class="footer__map"
+          title="Map: Best Travel office, Laisvės al. 10, Kaunas"
           width="300"
           height="200"
           style="border: 0"
@@ -316,8 +335,10 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <p class="copyright">
-        <small>&copy; 2026 Best Travel. All rights reserved.</small>
+      <p class="footer__copyright">
+        <small class="footer__copyright-text"
+          >&copy; 2026 Best Travel. All rights reserved.</small
+        >
       </p>
     </footer>
   </body>
