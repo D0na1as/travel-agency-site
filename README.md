@@ -1,10 +1,10 @@
 Best Travel – travel agency website
 
-index.html (Home)
-├── #offers       Travel offers
-├── #car-rental   Car rental
-├── #tips         Travel tips
-└── #journal      Travel journal
-request-form.html (Travel request)
-login.html (Log in)
+index.html (Home):<br>
+     &nbsp;- (Travel offers)<br>
+     &nbsp;- (Car rental)<br>
+     &nbsp;- (Travel tips)<br>
+     &nbsp;- (Travel journal)<br>
+request-form.html (Travel request)<br>
+login.html (Log in)<br>
 personal-blog.html (Personal blog)
